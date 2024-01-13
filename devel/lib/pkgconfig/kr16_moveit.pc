@@ -1,0 +1,8 @@
+prefix=/home/andrius/catkin_ws/devel
+
+Name: kr16_moveit
+Description: Description of kr16_moveit
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

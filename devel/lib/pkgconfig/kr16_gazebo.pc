@@ -1,0 +1,8 @@
+prefix=/home/andrius/catkin_ws/devel
+
+Name: kr16_gazebo
+Description: Description of kr16_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
