@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<robot name="kr16_main" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <xacro:arg name="camera" default="false"/>
+  <xacro:arg name="gripper_2f" default="false"/>
+  <xacro:arg name="caja" default="false"/>
+  <xacro:arg name="camera_arm" default="false"/>
+
+  <!-- Se definen argumentos que indican si se deben incluir la cámara, el gripper, la caja y la cámara del brazo en el modelo -->
+
+  <xacro:include filename="$(find kr16_gazebo)/urdf/gazebo.xacro"/>
+  <!-- Se incluye el archivo gazebo.xacro, que probablemente contiene la descripción básica del robot -->
+
+  <!-- Sección para incluir la cámara en el modelo si el argumento camera es verdadero -->
+  <xacro:if value="$(arg camera)">
+    <xacro:include filename="$(find kr16_gazebo)/urdf/camera.xacro"/>
+  </xacro:if>
+
+  <!-- Sección para incluir el gripper en el modelo si el argumento gripper_2f es verdadero -->
+  <xacro:if value="$(arg gripper_2f)">
+    <xacro:include filename="$(find kr16_gazebo)/urdf/gazebo_2f.xacro"/>
+  </xacro:if>
+
+  <!-- Sección para incluir la caja en el modelo si el argumento caja es verdadero -->
+  <xacro:if value="$(arg caja)">
+    <xacro:include filename="$(find kr16_gazebo)/urdf/caja.xacro"/>
+  </xacro:if>
+
+  <!-- Sección para incluir la cámara del brazo en el modelo si el argumento camera_arm es verdadero -->
+  <xacro:if value="$(arg camera_arm)">
+    <xacro:include filename="$(find kr16_gazebo)/urdf/camera_arm.xacro"/>
+  </xacro:if>
+
+</robot>
